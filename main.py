@@ -11,6 +11,6 @@ comisitions = calculate_commissions(data)
 print(comisitions)
 
 # Envía los resultados por correo electrónico
-send_email('resultado', 'ramirezyeison115@gmail.com')
+send_email('resultado', 'cbatista@bancolombia.com.co')
 
 
