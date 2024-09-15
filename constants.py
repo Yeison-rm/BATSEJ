@@ -10,3 +10,13 @@ commerce={
     'zenith':'Zenith Corp.',
     'fusionwave':'FusionWave Enterprises'
 }
+
+email_credentials={
+    'sender_email':'batsej@hotmail.com',
+    'sender_password':'Calculo_Comisiones'
+}
+
+smtp_settings={
+    'smtp_server':'smtp.office365.com',
+    'smtp_port':'587'
+}

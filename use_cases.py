@@ -1,12 +1,13 @@
 from constants import commerce
 import pandas as pd
+from datetime import datetime
+import os
 
 def calculate_commissions(commerce_df):
     """
     Calcula las comisiones a cobrar a cada comercio basándose en el número de peticiones exitosas y no exitosas.
     
     Args:
-        apicall_df (pd.DataFrame): DataFrame con los datos de las llamadas a la API.
         commerce_df (pd.DataFrame): DataFrame con los datos de los comercios.
         
     Returns:
@@ -63,4 +64,20 @@ def calculate_commissions(commerce_df):
             'Correo': row['commerce_email']
         })
     
-    return pd.DataFrame(results)
+    # Crear DataFrame con los resultados
+    results_df = pd.DataFrame(results)
+
+    # Directorio de destino
+    output_dir = 'resultado'
+    
+    # Crear el directorio si no existe
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
+    # Ruta de los archivos
+    backup_file = os.path.join(output_dir, f'calculo_comisiones_{datetime.now().strftime("%Y%m%d_%H%M%S")}.xlsx')
+    
+    # Guardar los DataFrames en archivos Excel
+    results_df.to_excel(backup_file, index=False)
+
+    return results_df
