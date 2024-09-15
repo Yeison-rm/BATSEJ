@@ -35,7 +35,7 @@ Finalmente, los resultados se envían a través de correo electrónico.
 # +----------------+                 
 
 # Componentes del Sistema:    
-El sistema está compuesto por tres módulos principales:
+El sistema está compuesto por cuatro módulos principales:
 
     - constants.py: Define los parámetros constantes utilizados en el cálculo.
     - query.py: Extrae los datos relevantes de la base de datos. 
